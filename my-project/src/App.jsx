@@ -1,26 +1,28 @@
 
 import './App.css'
-import Sidebar from './components/Sidebar'
-import Player from './components/Player'
+import Display from './components/Display'
+
+
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
+
 function App() {
-
-
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <><Display /></>
+    },
+   
+   
+  ])
   return (
     <>
-     <div>
-      <div className='bg-black h-screen'>
-        <div className='h-[90%] flex'>
-         <Sidebar/>
-        </div>
       
-          <Player/>
-      
+      <RouterProvider router={router} />
 
-      </div>
-     </div>
-      
     </>
   )
 }
+
+
 
 export default App
